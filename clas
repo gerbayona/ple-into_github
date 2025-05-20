@@ -1,0 +1,24 @@
+
+histogramasTabla <-fuction(df){
+    namvars <- names(df)
+    n <- lemgth(namvars)
+    par(mfrow= c(1, n))
+    for (var in namvars){
+        hist(df[[var]]),
+            main= var,
+            xlab="ramgos",
+            ylab="frecuancias",
+            col="ligthblue",
+            border = "black"    
+    }
+    par(mfrow=c(1,1))
+}
+
+tabla <- data.frame(
+    "tunif"=runif(1000,min=25,max=35),
+    "texp"=rexp(1000,rate=1/30),
+    "TnormA"=rnorm(1000,mean=0, sd= 2),
+    "Enteros"=rnorm(1000,mean=10, sd=2),
+    "categoricos"=sample(LETTERS[1:26],1000,replace= TRUE)
+)
+barplot()
